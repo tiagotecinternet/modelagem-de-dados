@@ -51,3 +51,10 @@ ALTER TABLE produtos
     # A chave estrangeira deve fazer referência à chave primária
     FOREIGN KEY(fabricante_id) REFERENCES fabricantes(id);
 ```
+
+
+### Adicionar campo/coluna em uma tabela
+
+```sql
+ALTER TABLE produtos ADD fabricante_id INT NOT NULL AFTER preco;
+```
