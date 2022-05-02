@@ -58,3 +58,7 @@ ALTER TABLE produtos
 ```sql
 ALTER TABLE produtos ADD fabricante_id INT NOT NULL AFTER preco;
 ```
+
+```sql
+ALTER TABLE produtos ADD quantidade TINYINT NOT NULL AFTER preco;
+```
