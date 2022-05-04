@@ -146,7 +146,29 @@ FROM produtos;
 -- ROUND (Arredondamento)
 SELECT ROUND(AVG(preco), 2) AS "Média dos Preços"
 FROM produtos;
+
+-- COUNT (Contagem)
+SELECT COUNT(id) AS "Qtd de Produtos"
+FROM produtos;
+
+-- DISTINCT é um comando para evitar a duplicidade na contagem de campos que não são chave-primária
+SELECT COUNT(DISTINCT fabricante_id) 
+AS "Qtd de Fabricantes" FROM produtos;
+
+SELECT nome, preco, quantidade, 
+(preco * quantidade) AS Total
+FROM produtos;
 ```
+
+### Agrupamentos
+```sql
+SELECT fabricante_id, SUM(preco) AS Total FROM produtos
+GROUP BY fabricante_id;
+
+--GROUP BY permite segmentar resultados da consulta. Neste caso, somamos todos os preços e segmentamos/agrupamos por cada fabricante.
+```
+
+
 
 
 
