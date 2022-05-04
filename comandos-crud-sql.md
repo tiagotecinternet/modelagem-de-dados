@@ -113,6 +113,42 @@ WHERE fabricante_id != 3; -- versão 2 usando operador !=
 
 ```
 
+### Filtros
+```sql
+SELECT nome, preco FROM produtos ORDER BY nome; -- ASC
+SELECT nome, preco FROM produtos ORDER BY nome DESC;
+
+-- ASC -> ordenação em modo crescente (padrão)
+-- DESC -> ordenação em modo decrescente
+
+SELECT nome, descricao FROM produtos
+WHERE descricao LIKE '%processador%'; -- LIKE (COMO)
+-- % OPERADOR CORINGA (SIGNIFICA QUALQUER TEXTO)
+```
+
+### Operações e Funções de agregação
+```sql
+SELECT SUM(preco) FROM produtos; -- SOMA
+
+SELECT SUM(preco) AS TOTAL -- AS É UM ALIAS (APELIDO)
+FROM produtos;
+
+SELECT SUM(quantidade) AS "Quantidade em Estoque"
+FROM produtos;
+
+SELECT SUM(quantidade) AS "Quantidade em Estoque"
+FROM produtos WHERE fabricante_id = 3; -- Apple
+
+-- AVG (AVERAGE) MÉDIA
+SELECT AVG(preco) AS "Média dos Preços" -- Apelido
+FROM produtos;
+
+-- ROUND (Arredondamento)
+SELECT ROUND(AVG(preco), 2) AS "Média dos Preços"
+FROM produtos;
+```
+
+
 
 
 
